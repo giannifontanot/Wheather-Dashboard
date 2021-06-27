@@ -1,0 +1,61 @@
+.container-day-out{
+    padding: 10px 35px 0 0;
+    transition: 2s;
+}
+
+.container-day{
+    background-color: #334758;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,1.2);
+}
+
+.container-search{
+    padding: 1em 0em 1em 1em;
+ }
+
+ .container-detail{
+    padding: 0.3em;
+    border: 1px solid black;
+   xmargin: 1em;
+ }
+
+ .container-forecast{
+  padding: 0.5em 1em 0em 1em;
+ }
+
+.imgMoon {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 0;
+  width: 60%;
+}
+
+.detail-forecast-image-temp {
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,1.2);
+    background-color: skyblue;
+    width: 150px;
+    margin-top: 15px;
+}
+
+.detail-forecast-image-moon {
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,1.2);
+    background-color: #334756;
+    width: 150px;
+    margin-top: 15px;
+    color: white;
+}
+
+.detail-forecast-image-moon img {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./assets/css/modal.css" />
+    <link rel="stylesheet" href="./assets/css/page-elements.css" />
+    <link rel="stylesheet" href="./assets/css/visual.css" />
+    <link rel="stylesheet" href="./assets/css/buttons.css" />
+    <link rel="stylesheet" href="./assets/css/containers.css" />
+    <link rel="stylesheet" href="./assets/css/decorations.css" />
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.4/jquery.min.js" integrity="sha512-SW0bB7zYONzOFdTogLM8mF+lpvSaPH55g+RyyV8+dRZkiW5n/c1gNgGk5i2xfzDLTmPHvSCqsaiEoZJDiToTWg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" integrity="sha512-cViKBZswH231Ui53apFnPzem4pvG8mlCDrSyZskDE9OK2gyUd/L08e1AC0wjJodXYZ1wmXEuNimN1d3MWG7jaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="./assets/scripts/time.js"></script>
+<script src="./assets/scripts/geolocation.js"></script>
+<script src="./assets/scripts/objects.js"></script>
+<script src="./assets/scripts/temperature.js"></script>
+
+<div class="pure-g">
+<!--------------->
+<!--    Banner -->
+<!--------------->
+    <div class="pure-u-1 center-content banner">
+        <h2 class="banner-text">Wheather Dashboard</h2>
+    </div>
+</div>
+
+<!--------------------------------------->
+<!--    Left search and list of Cities -->
+<!--------------------------------------->
+<div class="pure-g">
+    <div class="pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-4 container-search">
+        <div class="pure-g">
+
+            <div class="pure-u-1">
+                <h2 class="header-city">Search for a City:</h2>
+                <form class="pure-form pure-form-stacked">
+                    <input value="" style="transition: 2s;" type="text" id="input_city" placeholder="City" class="pure-u-1 " required="" />
+                    <button id="submit" class="pure-u-1 pure-button button-primary"><i class="fa fa-cog"></i> Submit</button>
+
+                </form>
+                <hr class="panel_divisor" />
+            </div>
+            <div class="pure-u-1" id="list_city">
+
+
+            </div>
+        </div>
+
+    </div>
+
+<!--------------------------------------->
+<!--    Right forecast and details of a city -->
+<!--------------------------------------->
+    <div class="pure-u-sm-1 pure-u-md-1-2 pure-u-lg-3-4 container-forecast">
+            <div class="pure-u-1 detail-city container-detail">
+                <div class="pure-g">
+                    <div class="pure-u-1-6">
+                        <h2 class="header-city" id="header_city">header</h2>
+                        <div class="forecast-value ">Temp: <label class="" id="lbl-temp"></label>&#176;F</div>
+                        <div class="forecast-value">Wind: <label class="" id="lbl-wind"></label></div>
+                        <div class="forecast-value">Humidity: <label class="" id="lbl-humidity"></label></div>
+                        <div class="forecast-value">UV Index: <label class="" id="lbl-uvindex"></label></div>
+                    </div>
+                    <div class="pure-u-1-6">&nbsp;</div>
+                    <div class="pure-u-1-6" style="madrgin-bottom:130px;margin-right:auto;">
+                        <div class="currdent_weather detail-forecast-image-temp">
+                            <div id="img_forecast" class=""></div>
+                            <div id="current_description_temp" class="current_description"></div>
+                        </div>
+                    </div>
+                    <div class="pure-u-1-6">&nbsp;</div>
+                    <div class="pure-u-1-6">
+                        <div class="curdrent_weather detail-forecast-image-moon">
+                            <div id="img_moon"></div>
+                            <div id="current_description_moon" class="current_description"></div>
+                        </div>
+                    </div>
+                    <div class="pure-u-1-6">&nbsp;</div>
+<!--This is just a comment-->
+
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-1 container-forecast">
+                    <h3 class="header-city"> 5-Day Forecast:</h3>
+                    <div class="pure-g">
+
+                        <div class="pure-u-sm-1-1 pure-u-md-1-2 pure-u-lg-1-5 container-day-out"><div class="container-day" id="container-monday"></div></div>
+                        <div class="pure-u-sm-1-1 pure-u-md-1-2 pure-u-lg-1-5 container-day-out"><div class="container-day" id="container-tuesday"></div></div>
+                        <div class="pure-u-sm-1-1 pure-u-md-1-2 pure-u-lg-1-5 container-day-out"><div class="container-day" id="container-wednesday"></div></div>
+                        <div class="pure-u-sm-1-1 pure-u-md-1-2 pure-u-lg-1-5 container-day-out"><div class="container-day" id="container-thursday"></div></div>
+                        <div class="pure-u-sm-1-1 pure-u-md-1-2 pure-u-lg-1-5 container-day-out"><div class="container-day" id="container-friday"></div></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script src="./assets/scripts/weather-dashboard.js"></script>
+<script src="./assets/scripts/weather-dashboard-jquery.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

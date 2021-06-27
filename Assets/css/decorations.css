@@ -1,0 +1,86 @@
+.uvGreen{
+    background: lightgreen;
+}
+
+.uvRed{
+    background: red;
+}
+
+.uvYellow{
+    background: yellow;
+    color: black;
+}
+
+.uvGreen uvDaily{
+    background: lightgreen;
+    color: black;
+}
+
+.uvRed uvDaily{
+    background: red;
+}
+
+.uvYellow uvDaily{
+    background: yellow;
+    color: black;
+}
+
+.current_description{
+    font-weight: bold;
+}
+
+.current_description{
+    background-color: transparent;
+}
+
+.center-content{
+     text-align: center;
+     margin-right: auto;
+     margin-left: auto;
+ }
+
+.forecast-value{
+    line-height: 30px;
+}
+
+
+.lbl_img_detail{
+    width: 100%;
+    text-align: center;
+}
+
+.lbl-image-daily{
+    font-size: 60%;
+    font-weight: bold;
+    margin-right: auto
+    margin-left: auto;
+    width: 100%;
+
+         text-align: center;
+
+         margin-top: -20px;
+}
+
+.label-forecast{
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.header-city{
+    margin: 5px 0px 5px 0px;
+}
+
+.banner-text{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 12px 0px;
+}
+
+.banner{
+    margin: 0px 0 0 0;
+    color: white;
+    background-image: linear-gradient(to right, #3B6EC0, #1D0436);
+    box-shadow: 0 0 8px 0 rgba(0,0,0,1.2);
+}
+

@@ -1,0 +1,23 @@
+.vred{
+    border: 1px solid red;
+}
+
+.vblue{
+    border: 1px solid blue;
+}
+
+.vgreen{
+    border: 1px solid green;
+}
+
+.bred{
+    background-color: red;
+}
+
+.bblue{
+    background-color: lightblue;
+}
+
+.bgreen{
+    background-color: lightgreen;
+}
