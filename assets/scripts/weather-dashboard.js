@@ -48,7 +48,7 @@ function fGetWeather(event){
     document.getElementById('container-thursday').innerHTML = "";
     document.getElementById('container-friday').innerHTML = "";
 
-    let apiName = "http://api.openweathermap.org/geo/1.0/direct?q="+cityEl.value +"&limit=5&appid=6fa88c112922f0c002ec0deafa3d6748";
+    let apiName = "https://api.openweathermap.org/geo/1.0/direct?q="+cityEl.value +"&limit=5&appid=6fa88c112922f0c002ec0deafa3d6748";
 
     //Fetch lat and lon of the city
     fetch(apiName)
