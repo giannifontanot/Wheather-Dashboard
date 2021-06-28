@@ -1,13 +1,37 @@
 // Display the user's location
 fFindOwnLocation();
+// Display already saved cities
+fFillButtonsList();
+
 
 
 let submitEl = document.querySelector('#submit');
 let cityEl = document.getElementById('input_city');
 
-// ADD listeners
+// ADD listeners to SUBMIT and to NEW CITY BUTTONS
 submitEl.addEventListener('click', fGetWeather);
 cityEl.addEventListener('click', fDeleteCityValue);
+
+
+// Fill CITY BUTTONS fron Local Storage
+function fFillButtonsList(){
+    console.log('fFillButtonsList');
+    if ((localStorage.getItem('buttonsJSON'))) {
+        const strButtonsJSON = localStorage.getItem('buttonsJSON');
+        const objButtons = JSON.parse(strButtonsJSON);
+
+        for (let i=0; i<objButtons.length; i++){
+            //Create button element and append to button list
+            const buttonEl = document.createElement("button");
+            buttonEl.innerText = objButtons[i].name;
+            buttonEl.className = 'pure-u-1 pure-button button-list';
+            console.log(buttonEl.innerText);
+            const listCityEl = document.getElementById('list_city');
+            listCityEl.appendChild(buttonEl);
+            buttonEl.addEventListener('click', fGetWeatherStored);
+        }
+    }
+}
 
 function fDeleteCityValue(){
     cityEl.value = "";
@@ -19,6 +43,17 @@ function fGetWeatherStored(event){
     let storedCity = event.target.innerText;
     cityEl.value = storedCity;
     fGetWeather();
+}
+
+function fCreateButton(pCity) {
+    // Create a list of previous searches
+    let listCityEl = document.getElementById("list_city");
+    let btnEl = document.createElement("button");
+    btnEl.className = "pure-u-1 pure-button button-list";
+    btnEl.innerText = pCity;
+    listCityEl.appendChild(btnEl);
+    btnEl.addEventListener('click', fGetWeatherStored);
+
 }
 
 function fGetWeather(event){
@@ -33,12 +68,17 @@ function fGetWeather(event){
     let listCityEl = document.getElementById("list_city");
     let listCityText = listCityEl.innerText;
     if(!re.test(listCityText)){
-        // Create a list of previous searches
-        let btnEl = document.createElement("button");
-        btnEl.className = "pure-u-1 pure-button button-list";
-        btnEl.innerText = cityEl.value;
-        listCityEl.appendChild(btnEl);
-        btnEl.addEventListener('click', fGetWeatherStored);
+        // Create a new city button
+        fCreateButton(cityEl.value);
+        // Store the new button
+        if(!localStorage.getItem('buttonsJSON')){
+            localStorage.setItem('buttonsJSON','[]');
+        }
+        let buttonsJSON = localStorage.getItem('buttonsJSON');
+        let objButtons = JSON.parse(buttonsJSON);
+        const myCity = new CityObject(cityEl.value);
+        objButtons.push(myCity);
+        localStorage.setItem('buttonsJSON', JSON.stringify(objButtons));
     }
 
     // Clear all containers
@@ -61,7 +101,6 @@ function fGetWeather(event){
 
         // We throw a fetch inside a fetch...
         let apiWeather =  "https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&appid=6fa88c112922f0c002ec0deafa3d6748";
-        console.log(apiWeather);
         fetch(apiWeather)
         .then(response=>{
             return response.json();
@@ -204,7 +243,6 @@ function fNewDay(pContainer, pDate, pTempImg, pTemp, pDescTemp, pWind, pHum, pUV
 function fFindUVColor(pUVIndex){
 pUVIndex = pUVIndex + 1;
 pUVIndex = pUVIndex - 1;
-console.log(pUVIndex);
 
     let uvColor = "";
     if(pUVIndex >= 8){
