@@ -1,5 +1,9 @@
+// Define a City Object
+function CityObject(name){
+    this.name = name;
+}
 
-    // Define a Moon Object
+// Define a Moon Object
 function MoonObject(moonPercentage, phaseName, phaseImage){
     this.phaseName = phaseName;
     this.phaseImage = phaseImage;
