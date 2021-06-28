@@ -20,7 +20,7 @@ Weather Dashboard is a tiny app that shows the weather for the next 5 days.
 - Bright colors
 
 ## This is an image of the Weather Dashboard: 
-![img.png](assets/images/screenshot.png)
+![img.png](images/screenshot.png)
 
 Feel free to contact the autor at [giannifontanot@gmail.com](http://mailto:giannifontanot@gmail.com/).
 
