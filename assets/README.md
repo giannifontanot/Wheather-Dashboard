@@ -19,6 +19,11 @@ Weather Dashboard is a tiny app that shows the weather for the next 5 days.
 - Very intuitive interface
 - Bright colors
 
+## Future Features
+
+- Compatibility with Microsoft EDGE
+- Better display on mobile 
+
 ## This is an image of the Weather Dashboard: 
 ![img.png](images/screenshot.png)
 
