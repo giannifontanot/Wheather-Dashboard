@@ -28,7 +28,7 @@ Weather Dashboard is a tiny app that shows the weather for the next 5 days.
 
 ## This is an image of the Weather Dashboard:
 
-![Weather-Dashboard.gif](./images/Weather-Dashboard.gif)
+![Weather-Dashboard.gif](assets/images/Weather-Dashboard.gif)
 
 Feel free to contact the autor at [giannifontanot@gmail.com](http://mailto:giannifontanot@gmail.com/).
 
