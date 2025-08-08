@@ -111,13 +111,7 @@ function fGetWeather(event) {
             // We throw a fetch inside a fetch...
             let apiWeather = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=6fa88c112922f0c002ec0deafa3d6748";
             fetch(apiWeather)
-                .then(response => {
-                    return response.json();
-                })
-                .catch(err => {
-                    console.log('catch2');
-            console.log('CATCH 3: error is:', err);
-                })
+                .then(response => response.json())
                 .then(data => {
 
                     // Updating header
@@ -167,7 +161,8 @@ function fGetWeather(event) {
                         fNewDay(containers[i], dataDate, dataImgTemp, dataTemp, dataDescTemp, dataWind, dataHumi, dataUVI, dataImgMoon, dataDescMoon, dataPercentageMoon);
                     }
 
-                });
+                })
+                .catch(err => console.error('weather fetch failed', err));
 
         })
         .catch(err => {
