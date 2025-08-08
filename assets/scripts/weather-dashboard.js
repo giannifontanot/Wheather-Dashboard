@@ -12,7 +12,7 @@ submitEl.addEventListener('click', fGetWeather);
 cityEl.addEventListener('click', fDeleteCityValue);
 
 
-// Fill CITY BUTTONS fron Local Storage
+// Fill CITY BUTTONS from Local Storage
 function fFillButtonsList() {
     console.log('fFillButtonsList');
     if ((localStorage.getItem('buttonsJSON'))) {
