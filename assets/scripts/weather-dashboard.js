@@ -256,21 +256,16 @@ function fNewDay(pContainer, pDate, pTempImg, pTemp, pDescTemp, pWind, pHum, pUV
 }
 
 function fFindUVColor(pUVIndex) {
-    pUVIndex = pUVIndex + 1;
-    pUVIndex = pUVIndex - 1;
-
-    let uvColor = "";
-    if (pUVIndex >= 8) {
-        uvColor = "uvRed";
-    } else {
-        if (pUVIndex >= 6) {
-            uvColor = "uvYellow";
-        } else {
-            uvColor = "uvGreen";
-        }
+    const uvValue = Number(pUVIndex);
+    if (Number.isNaN(uvValue)) {
+        return "uvGreen";
     }
-
-    return uvColor;
+    if (uvValue >= 8) {
+        return "uvRed";
+    } else if (uvValue >= 6) {
+        return "uvYellow";
+    }
+    return "uvGreen";
 }
 
 
